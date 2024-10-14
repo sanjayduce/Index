@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microblogging App</title>
+    <link rel="stylesheet" href="micro.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Microblogging App</h1>
+
+        <div id="loginContainer">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button id="loginButton">Login</button>
+        </div>
+
+        <div class="post-form" style="display:none;" id="postForm">
+            <textarea id="postContent" placeholder="What's happening?" required></textarea>
+            <button id="postButton">Post</button>
+        </div>
+
+        <div class="posts" id="postsContainer"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
