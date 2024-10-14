@@ -3,59 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Ordering System</title>
     <link rel="stylesheet" href="Food.css">
-    <title>Food Delivery Service</title>
 </head>
 <body>
-    <header>
-        <h1>Food Delivery Service</h1>
-    </header>
-    <main>
-        <section id="restaurant-list">
-            <h2>Select a Restaurant</h2>
-            <ul id="restaurants">
-                <li data-id="1">Italian Bistro</li>
-                <li data-id="2">Sushi Place</li>
-                <li data-id="3">Burger Joint</li>
+    <div id="app">
+        <div id="restaurants">
+            <h1>Select a Restaurant</h1>
+            <ul>
+                <li data-id="1"><img src="italian.jpg" alt="Italian Bistro"> Italian Bistro</li>
+                <li data-id="2"><img src="sushi.jpg" alt="Sushi Place"> Sushi Place</li>
+                <li data-id="3"><img src="burgerjoint.avif" alt="Burger Joint"> Burger Joint</li>
             </ul>
-        </section>
-        <section id="menu" class="hidden">
+        </div>
+
+        <div id="menu" class="hidden">
+            <button id="back-button">Back</button>
             <h2 id="restaurant-name"></h2>
-            <img id="restaurant-image" src="" alt="" class="restaurant-img">
+            <img id="restaurant-image" alt="">
             <ul id="menu-items"></ul>
-            <button id="back-button">Back to Restaurants</button>
-        </section>
-        <section id="cart" class="hidden">
+        </div>
+
+        <div id="cart" class="hidden">
             <h2>Your Cart</h2>
             <ul id="cart-items"></ul>
             <p id="total-bill">Total: $0.00</p>
             <button id="checkout-button">Checkout</button>
             <button id="clear-cart-button">Clear Cart</button>
-        </section>
+        </div>
+
         <div id="billing" class="hidden">
             <h2>Billing Information</h2>
             <form id="billing-form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" required>
-                
-                <label for="address">Address:</label>
-                <input type="text" id="address" required>
-                
-                <label for="payment">Payment Method:</label>
-                <select id="payment" required>
-                    <option value="credit">Credit Card</option>
-                    <option value="paypal">PayPal</option>
-                </select>
-                
-                <button type="submit">Submit</button>
+                <label>Name: <input type="text" id="name" required></label>
+                <label>Address: <input type="text" id="address" required></label>
+                <label>City: <input type="text" id="city" required></label>
+                <label>State: <input type="text" id="state" required></label>
+                <label>Zip Code: <input type="text" id="zip" required></label>
+                <label>Card Number: <input type="text" id="card-number" required></label>
+                <label>Expiration Date: <input type="text" id="exp-date" placeholder="MM/YY" required></label>
+                <label>CVV: <input type="text" id="cvv" required></label>
+                <button type="submit">Submit Order</button>
             </form>
-            <button id="cancel-checkout">Cancel</button>
+            <ul id="order-summary"></ul>
+            <p id="order-total"></p>
         </div>
-        
-    </main>
-    <footer>
-        <p>© 2024 Food Delivery Service</p>
-    </footer>
+    </div>
     <script src="Food.js"></script>
 </body>
 </html>
