@@ -1,7 +1,7 @@
 
 const restaurants = {
     1: {
-        name: "Italian Bistro",
+        name: "Italian Cafe",
         image: "italian.jpg",
         menu: [
             { name: "Pasta Carbonara", price: 12, image: "pasta carbaro.jpg" },
@@ -10,7 +10,7 @@ const restaurants = {
         ]
     },
     2: {
-        name: "Sushi Place",
+        name: "Barbequeen",
         image: "sushi.jpg",
         menu: [
             { name: "California Roll", price: 8, image: "Food delivery/california1.jpg" },
@@ -19,7 +19,7 @@ const restaurants = {
         ]
     },
     3: {
-        name: "Burger Joint",
+        name: "Burger Point",
         image: "Burger joint.jpg",
         menu: [
             { name: "Cheeseburger", price: 9, image: "cheeseburger.jpg" },
