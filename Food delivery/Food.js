@@ -13,7 +13,7 @@ const restaurants = {
         name: "Barbequeen",
         image: "sushi.jpg",
         menu: [
-            { name: "California Roll", price: 8, image: "california1.jpg" },
+            { name: "California Roll", price: 8, image: "Californiaroll.webp" },
             { name: "Sashimi", price: 15, image: "Sashmi.jpg" },
             { name: "Miso Soup", price: 5, image: "Miso.jpg" }
         ]
@@ -22,9 +22,9 @@ const restaurants = {
         name: "Burger Point",
         image: "Burger joint.jpg",
         menu: [
-            { name: "Cheeseburger", price: 9, image: "cheeseburger.jpg" },
-            { name: "Fries", price: 3, image: "fries.jpg" },
-            { name: "Milkshake", price: 4, image: "milkshake.jpg" }
+            { name: "Cheeseburger", price: 9, image: "Cheeseburger.jpg" },
+            { name: "Fries", price: 3, image: "Fries.jpg" },
+            { name: "Milkshake", price: 4, image: "Milkshake.jpg" }
         ]
     }
 };
