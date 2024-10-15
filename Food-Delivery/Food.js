@@ -5,7 +5,7 @@ const restaurants = {
         menu: [
             { name: "Pasta Carbonara", price: 12, image: "pasta carbaro.jpg" },
             { name: "Margherita Pizza", price: 10, image: "margherita-pizza.jpg" },
-            { name: "Tiramisu", price: 6, image: "tiramisu.jpg" }
+            { name: "Tiramisu", price: 6, image: "Tiramisu.jpg" }
         ]
     },
     2: {
