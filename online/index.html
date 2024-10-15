@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classified Ads</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Buy and Sell Used Products</h1>
+        <button onclick="document.getElementById('adForm').style.display='block'">Post an Ad</button>
+    </header>
+    
+    <main>
+        <div id="adList"></div>
+        
+        <div id="adForm" class="modal">
+            <div class="modal-content">
+                <span onclick="document.getElementById('adForm').style.display='none'" class="close">&times;</span>
+                <h2>Post Your Ad</h2>
+                <form id="form">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" required>
+                    
+                    <label for="description">Description:</label>
+                    <textarea id="description" required></textarea>
+                    
+                    <label for="price">Price:</label>
+                    <input type="number" id="price" required>
+                    
+                    <label for="image">Image:</label>
+                    <input type="file" id="image" accept="image/*" required>
+                    
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+        
+        <div id="cartSection">
+            <h2>Your Cart <span id="cartCount">(0 items)</span></h2>
+            <div id="cartList"></div>
+            <button id="checkoutButton">Checkout</button>
+        </div>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
