@@ -13,7 +13,7 @@ const restaurants = {
         name: "Sushi Place",
         image: "sushi.jpg",
         menu: [
-            { name: "California Roll", price: 8, image: "californiaroll.webp" },
+            { name: "California Roll", price: 8, image: "Food delivery/california1.jpg" },
             { name: "Sashimi", price: 15, image: "Sashmi.jpg" },
             { name: "Miso Soup", price: 5, image: "miso.jpg" }
         ]
