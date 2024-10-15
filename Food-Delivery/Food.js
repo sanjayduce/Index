@@ -1,3 +1,4 @@
+
 const restaurants = {
     1: {
         name: "Italian Bistro",
@@ -19,7 +20,7 @@ const restaurants = {
     },
     3: {
         name: "Burger Joint",
-        image: "burgerjoint.avif",
+        image: "Burger joint.jpg",
         menu: [
             { name: "Cheeseburger", price: 9, image: "cheeseburger.jpg" },
             { name: "Fries", price: 3, image: "fries.jpg" },
