@@ -1,51 +1,82 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 20px;
-  }
-  
-  h1 {
-    color: #333;
-  }
-  
-  h2 {
-    color: #555;
+    background-color: #f4f4f4; /* Light background for better contrast */
+}
+
+h1 {
+    color: #2c3e50; /* Darker shade for headers */
+    font-size: 2.5em; /* Increase header size */
+    text-align: center; /* Center align the main header */
+}
+
+h2 {
+    color: #34495e; /* Slightly lighter for sub-headers */
     margin-top: 20px;
-  }
-  
-  ul {
+    font-size: 1.8em; /* Increase sub-header size */
+}
+
+ul {
     list-style-type: none;
     padding: 0;
-  }
-  
-  li {
+}
+
+li {
     margin: 10px 0;
-    padding: 10px;
+    padding: 15px; /* Increased padding for comfort */
     border: 1px solid #ddd;
-    background-color: #f9f9f9;
-  }
-  
-  label {
+    background-color: #fff; /* White background for list items */
+    border-radius: 8px; /* Rounded corners */
+    transition: transform 0.2s; /* Smooth scale effect */
+}
+
+li:hover {
+    transform: scale(1.02); /* Slightly enlarge on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+label {
     display: inline-block;
-    width: 100px;
-  }
-  
-  input, textarea {
+    width: 120px; /* Slightly wider labels */
+    font-weight: bold; /* Bold labels for emphasis */
+}
+
+input, textarea {
     width: 300px;
-    padding: 5px;
+    padding: 10px; /* Increased padding for comfort */
     margin-bottom: 10px;
-  }
-  
-  button {
-    background-color: #333;
+    border: 1px solid #ccc;
+    border-radius: 4px; /* Rounded corners */
+    transition: border-color 0.2s; /* Smooth border transition */
+}
+
+input:focus, textarea:focus {
+    border-color: #3498db; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+button {
+    background-color: #3498db; /* Bright blue button */
     color: #fff;
-    padding: 5px 10px;
+    padding: 10px 15px;
     border: none;
+    border-radius: 5px; /* Rounded button corners */
     cursor: pointer;
-  }
-  /* Style for the "Purchased" button */
-  .purchased-button {
+    transition: background-color 0.2s; /* Smooth background transition */
+}
+
+button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+button:active {
+    background-color: #1c598a; /* Even darker when pressed */
+}
+
+/* Style for the "Purchased" button */
+.purchased-button {
     background-color: #ccc;
     color: #888;
     cursor: not-allowed;
-  }
-  
+    border-radius: 5px; /* Ensure consistency with other buttons */
+}
