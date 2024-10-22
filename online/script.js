@@ -1,4 +1,4 @@
-  let cart = [];
+let cart = [];
 
 // Handle form submission for posting an ad
 document.getElementById('form').addEventListener('submit', function(event) {
@@ -64,7 +64,7 @@ document.getElementById('form').addEventListener('submit', function(event) {
             const questionText = questionInput.value.trim();
             if (questionText) {
                 const questionItem = document.createElement('p');
-                questionItem.innerText = `Q: ${questionText}`;
+                questionItem.innerText = Q: ${questionText};
                 adItem.appendChild(questionItem);
                 questionInput.value = ''; // Clear the input
             }
@@ -97,7 +97,7 @@ document.getElementById('form').addEventListener('submit', function(event) {
 // Add to Cart Functionality
 function addToCart(ad) {
     cart.push(ad);
-    alert(`${ad.title} has been added to your cart!`);
+    alert(${ad.title} has been added to your cart!);
     updateCart();
     updateCartCount();
 }
@@ -123,7 +123,7 @@ function updateCart() {
 
 // Update cart item count
 function updateCartCount() {
-    document.getElementById('cartCount').innerText = `(${cart.length} item${cart.length !== 1 ? 's' : ''})`;
+    document.getElementById('cartCount').innerText = (${cart.length} item${cart.length !== 1 ? 's' : ''});
 }
 
 // Handle Checkout
@@ -167,14 +167,14 @@ document.getElementById('checkoutButton').addEventListener('click', function() {
         // Gather order details
         let orderDetails = "Your Order:\n";
         cart.forEach(item => {
-            orderDetails += `${item.title} - $${item.price}\n`;
+            orderDetails += ${item.title} - $${item.price}\n;
         });
         orderDetails += "Total: $" + cart.reduce((sum, item) => sum + parseFloat(item.price), 0).toFixed(2);
 
         // Prompt for payment details
         const paymentDetails = prompt("Please enter your payment details (e.g., credit card number):");
         if (paymentDetails) {
-            alert("Order placed successfully!\n" + orderDetails + `\nAddress: ${street}, ${city}, ${state} ${zip}\nPayment details: ${paymentDetails}`);
+            alert("Order placed successfully!\n" + orderDetails + \nAddress: ${street}, ${city}, ${state} ${zip}\nPayment details: ${paymentDetails});
             cart = []; // Clear the cart
             document.getElementById('cartList').innerHTML = ''; // Clear cart display
             updateCartCount(); // Update cart count display
