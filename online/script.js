@@ -54,7 +54,7 @@ document.getElementById('form').addEventListener('submit', function(event) {
         const askButton = document.createElement('button');
         askButton.type = 'submit';
         askButton.innerText = 'Ask';
-        
+
         questionForm.appendChild(questionInput);
         questionForm.appendChild(askButton);
         
@@ -82,7 +82,7 @@ document.getElementById('form').addEventListener('submit', function(event) {
         adItem.appendChild(questionForm); // Add question form
         adList.appendChild(adItem);
         
-        // Hide the modal after submission
+        // Hide the modal after submission (if applicable)
         document.getElementById('adForm').style.display = 'none';
     };
 
@@ -106,6 +106,11 @@ function addToCart(ad) {
 function updateCart() {
     const cartList = document.getElementById('cartList');
     cartList.innerHTML = ''; // Clear current cart items
+
+    if (cart.length === 0) {
+        cartList.innerHTML = '<p>Your cart is empty.</p>'; // Optional message
+        return;
+    }
 
     cart.forEach(item => {
         const cartItem = document.createElement('div');
@@ -169,7 +174,8 @@ document.getElementById('checkoutButton').addEventListener('click', function() {
         cart.forEach(item => {
             orderDetails += `${item.title} - $${item.price}\n`;
         });
-        orderDetails += "Total: $" + cart.reduce((sum, item) => sum + parseFloat(item.price), 0).toFixed(2);
+        const total = cart.reduce((sum, item) => sum + parseFloat(item.price), 0).toFixed(2);
+        orderDetails += `Total: $${total}`;
 
         // Prompt for payment details
         const paymentDetails = prompt("Please enter your payment details (e.g., credit card number):");
