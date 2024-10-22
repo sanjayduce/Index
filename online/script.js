@@ -1,19 +1,8 @@
 let cart = [];
 
-// Check if the form has already been submitted
-if (sessionStorage.getItem('formSubmitted')) {
-    document.getElementById('form').style.display = 'none'; // Optionally hide the form
-}
-
 // Handle form submission for posting an ad
 document.getElementById('form').addEventListener('submit', function(event) {
     event.preventDefault();
-
-    // Prevent further submissions if already submitted
-    if (sessionStorage.getItem('formSubmitted')) {
-        alert("You have already submitted the form.");
-        return;
-    }
 
     const title = document.getElementById('title').value.trim();
     const description = document.getElementById('description').value.trim();
@@ -75,18 +64,18 @@ document.getElementById('form').addEventListener('submit', function(event) {
             const questionText = questionInput.value.trim();
             if (questionText) {
                 const questionItem = document.createElement('p');
-                questionItem.innerText = `Q: ${questionText}`;
+                questionItem.innerText = Q: ${questionText};
                 adItem.appendChild(questionItem);
                 questionInput.value = ''; // Clear the input
             }
         });
 
         // Append everything to the adItem after the image is loaded
-        adItem.innerHTML = `
+        adItem.innerHTML = 
             <h3>${title}</h3>
             <p>${description}</p>
             <p>Price: $${price}</p>
-        `;
+        ;
         adItem.prepend(img); // Add the image to the beginning of adItem
         adItem.appendChild(deleteButton); // Add delete button
         adItem.appendChild(addToCartButton); // Add to cart button
@@ -95,9 +84,6 @@ document.getElementById('form').addEventListener('submit', function(event) {
         
         // Hide the modal after submission
         document.getElementById('adForm').style.display = 'none';
-
-        // Set the session storage flag
-        sessionStorage.setItem('formSubmitted', 'true');
     };
 
     // Read the file as a Data URL
@@ -111,7 +97,7 @@ document.getElementById('form').addEventListener('submit', function(event) {
 // Add to Cart Functionality
 function addToCart(ad) {
     cart.push(ad);
-    alert(`${ad.title} has been added to your cart!`);
+    alert(${ad.title} has been added to your cart!);
     updateCart();
     updateCartCount();
 }
@@ -124,20 +110,20 @@ function updateCart() {
     cart.forEach(item => {
         const cartItem = document.createElement('div');
         cartItem.className = 'cart-item';
-        cartItem.innerHTML = `
+        cartItem.innerHTML = 
             <img src="${item.imgSrc}" alt="${item.title}" class="cart-item-image">
             <div>
                 <h4>${item.title}</h4>
                 <p>Price: $${item.price}</p>
             </div>
-        `;
+        ;
         cartList.appendChild(cartItem);
     });
 }
 
 // Update cart item count
 function updateCartCount() {
-    document.getElementById('cartCount').innerText = `(${cart.length} item${cart.length !== 1 ? 's' : ''})`;
+    document.getElementById('cartCount').innerText = (${cart.length} item${cart.length !== 1 ? 's' : ''});
 }
 
 // Handle Checkout
@@ -149,7 +135,7 @@ document.getElementById('checkoutButton').addEventListener('click', function() {
 
     // Create address form
     const addressForm = document.createElement('form');
-    addressForm.innerHTML = `
+    addressForm.innerHTML = 
         <label for="street">Street Address:</label>
         <input type="text" id="street" placeholder="Enter your street address" required>
         
@@ -163,7 +149,7 @@ document.getElementById('checkoutButton').addEventListener('click', function() {
         <input type="text" id="zip" placeholder="Enter your ZIP code" required>
         
         <button type="submit">Proceed to Payment</button>
-    `;
+    ;
 
     addressForm.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -181,14 +167,14 @@ document.getElementById('checkoutButton').addEventListener('click', function() {
         // Gather order details
         let orderDetails = "Your Order:\n";
         cart.forEach(item => {
-            orderDetails += `${item.title} - $${item.price}\n`;
+            orderDetails += ${item.title} - $${item.price}\n;
         });
         orderDetails += "Total: $" + cart.reduce((sum, item) => sum + parseFloat(item.price), 0).toFixed(2);
 
         // Prompt for payment details
         const paymentDetails = prompt("Please enter your payment details (e.g., credit card number):");
         if (paymentDetails) {
-            alert("Order placed successfully!\n" + orderDetails + `\nAddress: ${street}, ${city}, ${state} ${zip}\nPayment details: ${paymentDetails}`);
+            alert("Order placed successfully!\n" + orderDetails + \nAddress: ${street}, ${city}, ${state} ${zip}\nPayment details: ${paymentDetails});
             cart = []; // Clear the cart
             document.getElementById('cartList').innerHTML = ''; // Clear cart display
             updateCartCount(); // Update cart count display
