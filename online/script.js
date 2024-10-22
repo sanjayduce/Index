@@ -1,8 +1,19 @@
 let cart = [];
 
+// Check if the form has already been submitted
+if (sessionStorage.getItem('formSubmitted')) {
+    document.getElementById('form').style.display = 'none'; // Optionally hide the form
+}
+
 // Handle form submission for posting an ad
 document.getElementById('form').addEventListener('submit', function(event) {
     event.preventDefault();
+
+    // Prevent further submissions if already submitted
+    if (sessionStorage.getItem('formSubmitted')) {
+        alert("You have already submitted the form.");
+        return;
+    }
 
     const title = document.getElementById('title').value.trim();
     const description = document.getElementById('description').value.trim();
@@ -84,6 +95,9 @@ document.getElementById('form').addEventListener('submit', function(event) {
         
         // Hide the modal after submission
         document.getElementById('adForm').style.display = 'none';
+
+        // Set the session storage flag
+        sessionStorage.setItem('formSubmitted', 'true');
     };
 
     // Read the file as a Data URL
