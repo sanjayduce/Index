@@ -1,4 +1,13 @@
-  let cart = [];
+let cart = [];
+
+// Function to show error messages
+function showError(message) {
+    const errorMessage = document.getElementById('errorMessage');
+    errorMessage.innerText = message;
+    setTimeout(() => {
+        errorMessage.innerText = ''; // Clear the message after 3 seconds
+    }, 3000);
+}
 
 // Handle form submission for posting an ad
 document.getElementById('form').addEventListener('submit', function(event) {
@@ -11,7 +20,7 @@ document.getElementById('form').addEventListener('submit', function(event) {
 
     // Basic validation
     if (!title || !description || !price || !imageFile) {
-        alert("Please fill out all fields and select an image.");
+        showError("Please fill out all fields and select an image.");
         return;
     }
 
@@ -19,7 +28,6 @@ document.getElementById('form').addEventListener('submit', function(event) {
     const adItem = document.createElement('div');
     adItem.className = 'ad';
 
-    // Create an image element
     const img = document.createElement('img');
     const reader = new FileReader();
 
@@ -54,10 +62,10 @@ document.getElementById('form').addEventListener('submit', function(event) {
         const askButton = document.createElement('button');
         askButton.type = 'submit';
         askButton.innerText = 'Ask';
-        
+
         questionForm.appendChild(questionInput);
         questionForm.appendChild(askButton);
-        
+
         // Handle question submission
         questionForm.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -81,23 +89,21 @@ document.getElementById('form').addEventListener('submit', function(event) {
         adItem.appendChild(addToCartButton); // Add to cart button
         adItem.appendChild(questionForm); // Add question form
         adList.appendChild(adItem);
-        
-        // Hide the modal after submission
-        document.getElementById('adForm').style.display = 'none';
+
+        // Clear the form
+        document.getElementById('form').reset();
     };
 
     // Read the file as a Data URL
     if (imageFile) {
         reader.readAsDataURL(imageFile);
     }
-
-    document.getElementById('form').reset();
 });
 
 // Add to Cart Functionality
 function addToCart(ad) {
     cart.push(ad);
-    alert(`${ad.title} has been added to your cart!`);
+    showError(`${ad.title} has been added to your cart!`);
     updateCart();
     updateCartCount();
 }
@@ -129,7 +135,7 @@ function updateCartCount() {
 // Handle Checkout
 document.getElementById('checkoutButton').addEventListener('click', function() {
     if (cart.length === 0) {
-        alert("Your cart is empty!");
+        showError("Your cart is empty!");
         return;
     }
 
@@ -160,7 +166,7 @@ document.getElementById('checkoutButton').addEventListener('click', function() {
 
         // Validate address fields
         if (!street || !city || !state || !zip) {
-            alert("Please fill out all address fields.");
+            showError("Please fill out all address fields.");
             return;
         }
 
@@ -179,7 +185,7 @@ document.getElementById('checkoutButton').addEventListener('click', function() {
             document.getElementById('cartList').innerHTML = ''; // Clear cart display
             updateCartCount(); // Update cart count display
         } else {
-            alert("Payment details are required to complete the order.");
+            showError("Payment details are required to complete the order.");
         }
     });
 
