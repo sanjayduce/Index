@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Leave Management System</h1>
+        <div id="leave-balance">
+            <h2>Your Leave Balance</h2>
+            <p>Casual Leave: <span id="casual-leave-balance">5</span> days</p>
+            <p>Medical Leave: <span id="medical-leave-balance">10</span> days</p>
+        </div>
+        
+        <h2>Apply for Leave</h2>
+        <form id="leave-form">
+            <label for="leave-type">Leave Type:</label>
+            <select id="leave-type" required>
+                <option value="casual">Casual Leave</option>
+                <option value="medical">Medical Leave</option>
+            </select>
+
+            <label for="leave-days">Number of Days:</label>
+            <input type="number" id="leave-days" min="1" required>
+
+            <button type="submit">Apply for Leave</button>
+        </form>
+
+        <div id="message"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
